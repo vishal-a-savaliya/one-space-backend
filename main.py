@@ -122,6 +122,9 @@ img {{
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(html_content, 'html.parser')
 
+    if not soup.html:
+        return jsonify(html=None)
+
     # Add styles to the relevant HTML tags
     _soup.head.insert(
         0, '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">')
