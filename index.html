@@ -1,0 +1,563 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">
+    <style>
+        @font-face {
+            font-family: 'SF Mono';
+            src: url('/path/to/SFMono-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'SF Mono', monospace;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #121212;
+            background-color: #f6f6f6;
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 5px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #121212;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        h5 {
+            font-size: 1rem;
+        }
+
+        h6 {
+            font-size: 0.875rem;
+        }
+
+        p {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #121212;
+        }
+
+        pre {
+            background-color: #f6f8fa;
+            color: #121212;
+            padding: 1.25rem;
+            border-radius: 0.25rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+
+        code {
+            font-size: 0.9rem;
+            background-color: #f6f8fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+
+        a {
+            color: #2962ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="medium-h2">Related Articles</h2>
+    <h1 class="medium-h1">What is Array?</h1>
+    <h3 class="medium-h3">What is an Array?</h3>
+    <p class="medium-p">An array is a collection of items of same data type stored at contiguous memory locations. </p>
+    <p>This makes it easier to calculate the position of each element by simply adding an <strong>offset</strong> to a
+        base value, i.e., the memory location of the first element of the array (generally denoted by the name of the
+        array). The base value is index 0 and the difference between the two indexes is the <strong>offset</strong>.</p>
+    <p>For simplicity, we can think of an array as a flight of stairs where on each step is placed a value (let’s say
+        one of your friends). Here, you can identify the location of any of your friends by simply knowing the count of
+        the step they are on. <br />Remember: “Location of next index depends on the data type we use”. </p>
+    <p style="text-align:center"><img alt="array"
+            src="https://media.geeksforgeeks.org/wp-content/uploads/array-2.png" />n</p>
+    <p class="medium-p">Is the array always of a fixed size?</p>
+    <p class="medium-p">In C language, the array has a fixed size meaning once the size is given to it, it cannot be
+        changed i.e. you can’t shrink it nor can you expand it. The reason was that for expanding if we change the size
+        we can’t be sure ( it’s not possible every time) that we get the next memory location to us for free. The
+        shrinking will not work because the array, when declared, gets memory statically allocated, and thus compiler is
+        the only one that can destroy it. </p>
+    <h3><strong>Types of indexing in an</strong> <strong>array:</strong> </h3>
+    <p style="text-align:center"><img alt="Array Data Structure"
+            src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Array-In-C.png" /></p>
+    <h3 class="medium-h3">How an Array is initialized?</h3>
+    <p class="medium-p">By default the array is uninitialized, and no elements of the array are set to any value.
+        However, for the proper working of the array, array initialization becomes important. Array initialization can
+        be done by the following methods:</p>
+    <p><strong><u>1. Passing no value within the initializer:</u></strong> One can initialize the array by defining the
+        size of the array and passing no values within the initializer.</p>
+    <p class="medium-p">Syntax:</p>
+    <p class="medium-p">int arr[ 5 ] = { };</p>
+    <p><strong><u>2. By passing specific values within the initializer:</u></strong> One can initialize the array by
+        defining the size of the array and passing specific values within the initializer. </p>
+    <p class="medium-p">Syntax:</p>
+    <p class="medium-p">int arr[ 5 ] = { 1, 2, 3, 4, 5 };</p>
+    <p><strong>Note: The count of elements within the “{ }”, must be less than or equals to the size of the array
+        </strong><br />If the count of elements within the “{ }” is less than the size of the array, the remaining
+        positions are considered to be ‘0’.</p>
+    <p class="medium-p">Syntax:</p>
+    <p class="medium-p">int arr[ 5 ] = { 1, 2, 3 } ;</p>
+    <p><strong><u>3. By passing specific values within the initializer but not declaring the size:</u></strong> One can
+        initialize the array by passing specific values within the initializer and not particularly mentioning the size,
+        the size is interpreted by the compiler.</p>
+    <p class="medium-p">Syntax:</p>
+    <p class="medium-p">int arr[ ] = { 1, 2, 3, 4, 5 };</p>
+    <p><strong><u>4. Universal Initialization:</u></strong> After the adoption of <strong>universal initialization
+        </strong>in C++, one can avoid using the equals sign between the declaration and the initializer. </p>
+    <p class="medium-p">Syntax:</p>
+    <p class="medium-p">int arr[ ] { 1, 2, 3, 4, 5 };</p>
+    <p>To know more about array initialization, <a
+            href="https://www.geeksforgeeks.org/different-ways-to-initialize-all-members-of-an-array-to-the-same-value-in-c/">click
+            here</a>.</p>
+    <h3 class="medium-h3">What are the different operations on the array?</h3>
+    <p class="medium-p">Arrays allow random access to elements. This makes accessing elements by position faster. Hence
+        operation like searching, insertion, and access becomes really efficient. Array elements can be accessed using
+        the loops.</p>
+    <p><strong>1. <u>Insertion in Array:</u></strong></p>
+    <p class="medium-p">We try to insert a value to a particular array index position, as the array provides random
+        access it can be done easily using the assignment operator.</p>
+    <p class="medium-p">Pseudo Code:</p>
+    <p class="medium-p">// to insert a value= 10 at index position 2;</p>
+    <p class="medium-p">arr[ 2 ] = 10;</p>
+    <p><strong>Time Complexity:</strong> </p>
+    <p class="medium-p">Here is the code for working in an array:</p>
+    <h2 class="medium-h2">C++</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="cpp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="cpp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="cpp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="cpp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Python3</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="python3"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="python3"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="python3" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="python3" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Java</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="java"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="java"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="java" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="java" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">C#</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="csharp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="csharp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="csharp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="csharp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Javascript</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="jscript"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="jscript"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="jscript" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="jscript" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <div class="medium-code">1 2 3 </div>
+    <p><strong>2. <u>Access elements in Array:</u></strong></p>
+    <p class="medium-p">Accessing array elements become extremely important, in order to perform operations on arrays.
+    </p>
+    <p class="medium-p">Pseudo Code:</p>
+    <p class="medium-p">// to access array element at index position 2, we simply can write</p>
+    <p class="medium-p">return arr[ 2 ] ;</p>
+    <p><strong>Time Complexity:</strong> O(1)</p>
+    <p class="medium-p">Here is the code for working in an array:</p>
+    <h2 class="medium-h2">C++</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="cpp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="cpp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="cpp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="cpp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Java</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="java"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="java"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="java" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="java" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Python3</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="python3"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="python3"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="python3" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="python3" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">C#</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="csharp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="csharp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="csharp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="csharp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Javascript</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="jscript"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="jscript"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="jscript" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="jscript" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <div class="medium-code">3</div>
+    <p><strong>3. <u>Searching in Array:</u></strong><u> </u></p>
+    <p class="medium-p">We try to find a particular value in the array, in order to do that we need to access all the
+        array elements and look for the particular value.</p>
+    <p class="medium-p">Pseudo Code:</p>
+    <p class="medium-p">// searching for value 2 in the array;</p>
+    <p>Loop from i = 0 to 5:<br /> check if arr[i] = 2:<br /> return true;</p>
+    <p><strong>Time Complexity:</strong> O(N), where N is the size of the array.</p>
+    <p class="medium-p">Here is the code for working with an array:</p>
+    <h2 class="medium-h2">C</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="c"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="c"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="c" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="c" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">C++</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="cpp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="cpp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="cpp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="cpp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Java</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="java"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="java"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="java" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="java" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">C#</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="csharp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="csharp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="csharp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="csharp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Python3</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="python3"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="python3"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="python3" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="python3" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Javascript</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="jscript"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="jscript"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="jscript" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="jscript" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <div class="medium-code">1 2 3 4</div>
+    <p class="medium-p">Here the value 5 is printed because the first element has index zero and at the zeroth index, we
+        already assigned the value 5.</p>
+    <h3 class="medium-h3">Types of arrays : </h3>
+    <h2 class="medium-h2">C++</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="cpp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="cpp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="cpp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="cpp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Java</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="java"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="java"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="java" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="java" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Python3</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="python3"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="python3"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="python3" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="python3" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">C#</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="csharp"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="csharp"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="csharp" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="csharp" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <h2 class="medium-h2">Javascript</h2>
+    <p><i class="gfg-icon gfg-icon_edit_1 padding-2px code-sidebar-button" id="run-and-edit-button" lang="jscript"
+            title="Edit Code"></i><br /><i
+            class="gfg-icon gfg-icon_close-editor padding-2px code-sidebar-button close-code-editor-button"
+            id="close-code-editor-button" title="Close Editor"></i></p>
+    <p><i class="gfg-icon gfg-icon_play padding-2px code-sidebar-button" id="run-code-button" lang="jscript"
+            title="Run Code and See Output"></i></p>
+    <p><i class="gfg-icon gfg-icon_link padding-2px code-sidebar-button generate-url-and-run-button"
+            id="generate-url-and-run-button" lang="jscript" title="Run Code and Generate IDE URL"></i><br /><i
+            class="gfg-icon gfg-icon_dark-toggle padding-2px code-sidebar-button dark-editor-button"
+            title="Dark Mode"></i><br /><i
+            class="gfg-icon gfg-icon_code padding-2px code-sidebar-button edit-on-ide-button" id="edit-on-ide-button"
+            lang="jscript" title="Edit on IDE"></i></p>
+    <pre class="output-pre"></pre>
+    <pre id="ide-url"></pre>
+    <div class="medium-code">matrix[0][0]=4 matrix[0][1]=5 matrix[1][0]=34 matrix[1][1]=67 matrix[2][0]=8 matrix[2][1]=9
+    </div>
+    <p>To learn about the differences between One-dimensional and Multidimensional arrays, <a
+            href="https://www.geeksforgeeks.org/difference-between-one-dimensional-and-two-dimensional-array/">click
+            here</a>.</p>
+    <h3 class="medium-h3"> </h3>
+    <h3 class="medium-h3"> </h3>
+    <p><strong>Space complexity: </strong>The space complexity of this code is O(1) because we are not creating any new
+        variables or data structures that depend on the input size. We are simply using a constant amount of memory to
+        store the 2D array and the loop variables.</p>
+    <p><strong>Time complexity:</strong> The time complexity of the nested for loop used in this code is O(n^2), where n
+        is the number of rows in the 2D array. This is because we are iterating over all the elements of the array,
+        which requires n x m iterations (where m is the number of columns in the array), resulting in a time complexity
+        of O(n^2).</p>
+    <h3><strong>Advantages of using arrays:</strong> </h3>
+    <h3><strong>Disadvantages of using arrays:</strong> </h3>
+    <p class="medium-p">You can’t change the size i.e. once you have declared the array you can’t change its size
+        because of static memory allocation. Here Insertion(s) and deletion(s) are difficult as the elements are stored
+        in consecutive memory locations and the shifting operation is costly too.</p>
+    <p>Now if take an example of the implementation of data structure Stack using array there are some obvious flaws.
+        <br />Let’s take the <strong>POP </strong>operation of the stack. The algorithm would go something like this.
+    </p>
+    <p class="medium-p">What we are doing here is, that the pointer to the topmost element is decremented, which means
+        we are just bounding our view, and actually that element stays there taking up the memory space. If you have an
+        array (as a Stack) of any primitive data type then it might be ok. But in the case of an array of Objects, it
+        would take a lot of memory.</p>
+    <p><strong>Examples –</strong> </p>
+    <p>// A character array in C/C++/Java<br />char arr1[] = {‘g’, ‘e’, ‘e’, ‘k’, ‘s’};</p>
+    <p>// An Integer array in C/C++/Java<br />int arr2[] = {10, 20, 30, 40, 50};</p>
+    <p>// Item at i’th index in array is typically accessed as “arr[i]”. <br />For example:<br />arr1[0] gives us
+        ‘g’<br />arr2[3] gives us 40</p>
+    <p class="medium-p">Usually, an array of characters is called a ‘string’, whereas an array of ints or floats is
+        simply called an array.</p>
+    <h3 class="medium-h3">Applications on Array</h3>
+    <p>To learn more about the advantage, disadvantages, and applications of arrays, <a
+            href="https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-array-data-structure/">click
+            here</a>.</p>
+    <h3 class="medium-h3">Frequently asked questions (FAQs) about Array Data Structures</h3>
+    <p class="medium-p">1. What is an array in data structure with example?</p>
+    <p class="medium-p">An array is a collection of items of the same data type stored at contiguous memory locations.
+        Ex. int arr[5] = {1, 2, 3, 4, 5};</p>
+    <p class="medium-p">2. What are the 3 types of arrays?</p>
+    <p class="medium-p">3. What data structure is an array?</p>
+    <p class="medium-p">An array is a linear data structure.</p>
+    <p class="medium-p">4. Difference between array and structure?</p>
+    <p class="medium-p">The structure can contain variables of different types but an array only contain variables of
+        the same type.</p>
+    <p class="medium-p">Solve DSA problems on GfG Practice.</p>
+    <h3>Please <u><span class="login-modal-btn" style="cursor:pointer;color:#308d46">Login</span></u> to comment...</h3>
+    <h4 class="medium-h4">Data Structures and Algorithms - Self Paced</h4>
+    <h4 class="medium-h4">Data Structures & Algorithms in JavaScript - Self Paced</h4>
+    <h4 class="medium-h4">Complete Interview Preparation - Self Paced</h4>
+    <h4 class="medium-h4">Complete Test Series for Product-Based Companies</h4>
+    <p class="medium-p">
+        rightBarExploreMoreList!=""&&($(".right-bar-explore-more").css("visibility","visible"),$(".right-bar-explore-more
+        .rightbar-sticky-ul").html(rightBarExploreMoreList))</p>
+    <h3 class="medium-h3">Improve your Coding Skills with Practice</h3>
+</body>
+
+</html>
