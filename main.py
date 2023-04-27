@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 from bs4 import BeautifulSoup
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/scrape', methods=['POST'])
@@ -23,7 +25,7 @@ def scrape():
 }}
 
     body {{
-  font-family: 'SF Mono', monospace;
+  font-family: 'SF Mono','JetBrains Mono', monospace;
   font-size: 1rem;
   line-height: 1.6;
   color: #121212;
@@ -127,7 +129,10 @@ img {{
 
     # Add styles to the relevant HTML tags
     _soup.head.insert(
-        0, '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">')
+        0, f'''<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-jetbrains-mono@3.501.1/css/jetbrains-mono.css">
+        ''')
 
     # Extract all the headings, paragraphs, codes, and images from the HTML content
     # contents = []

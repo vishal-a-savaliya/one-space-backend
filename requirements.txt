@@ -1,5 +1,5 @@
 Flask==2.0.2
 beautifulsoup4==4.9.3
 requests==2.26.0
-
+flask_cors==3.0.10
 
