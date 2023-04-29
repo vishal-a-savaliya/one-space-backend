@@ -17,6 +17,9 @@ def scrape():
     # Create a new style tag and add your CSS rules
     style_tag = _soup.new_tag('style')
     style_tag.string = f'''
+
+    @import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat&display=swap');
+
     @font-face {{
   font-family: 'SF Mono';
   src: url('/path/to/SFMono-Regular.otf') format('opentype');
@@ -30,8 +33,6 @@ def scrape():
   line-height: 1.6;
   color: #121212;
   background-color: #f6f6f6;
-  width: 80%;
-  margin: 0 auto;
   padding: 20px 5px;
 }}
 
@@ -128,11 +129,11 @@ img {{
         return jsonify(html=None)
 
     # Add styles to the relevant HTML tags
-    _soup.head.insert(
-        0, f'''<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">
+    # _soup.head.insert(
+    #     0, f'''<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vishalmishra667/medium-style.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-jetbrains-mono@3.501.1/css/jetbrains-mono.css">
-        ''')
+    #     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-jetbrains-mono@3.501.1/css/jetbrains-mono.css">
+    #     ''')
 
     # Extract all the headings, paragraphs, codes, and images from the HTML content
     # contents = []
